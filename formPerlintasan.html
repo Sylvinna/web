@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Checksheet Perlintasan Sebidang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .form-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .form-group label {
+      flex: 1 0 100%;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      flex: 1 0 100%;
+      padding: 8px;
+    }
+    .form-row-2 {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+    .form-row-2 > div {
+      flex: 1;
+    }
+    .section-title {
+      font-weight: bold;
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .rambu-img {
+      max-width: 120px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>FORM CHECKSHEET PERLINTASAN SEBIDANG</h2>
+  <form id="formPelintasan">
+    <div class="form-group"><label>Tanggal Monitoring</label><input type="date" name="tanggal"></div>
+    <div class="form-group"><label>Tim Pelaksana</label><input type="text" name="tim_pelaksana"></div>
+
+    <div class="form-group">
+      <label>No. JPL</label>
+      <input type="text" name="no_jpl" required>
+    </div>
+    <div class="form-group">
+      <label>Status Perlintasan</label>
+      <select name="status_perlintasan">
+        <option value="Resmi">Resmi</option>
+        <option value="Tidak Resmi">Tidak Resmi</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Status Penjagaan</label>
+      <input type="text" name="status_penjagaan">
+    </div>
+
+    <div class="section-title">LOKASI</div>
+    <div class="form-group"><label>Titik Koordinat</label><input type="text" name="koordinat"></div>
+    <div class="form-group"><label>KM+HM</label><input type="text" name="km_hm"></div>
+    <div class="form-group"><label>Lintas</label><input type="text" name="lintas"></div>
+    <div class="form-group"><label>Petak Jalan</label><input type="text" name="petak_jalan"></div>
+    <div class="form-group"><label>Nama Desa/Kel</label><input type="text" name="desa"></div>
+    <div class="form-group"><label>Nama Jalan</label><input type="text" name="jalan"></div>
+    <div class="form-group"><label>Nama Kecamatan</label><input type="text" name="kecamatan"></div>
+    <div class="form-group"><label>Nama Kab/Kota</label><input type="text" name="kabkota"></div>
+
+    <div class="section-title">KONDISI LINGKUNGAN</div>
+    <div class="form-group"><label>Lebar Jalan</label><input type="text" name="lebar_jalan"></div>
+    <div class="form-group"><label>Status Jalan</label><input type="text" name="status_jalan"></div>
+    <div class="form-group"><label>Struktur Jalan</label><input type="text" name="struktur_jalan"></div>
+    <div class="form-group"><label>Kendaraan Melintas</label><input type="text" name="kendaraan_melintas"></div>
+
+    <div class="section-title">DATA PRASARANA</div>
+    <div class="form-group"><label>Jenis Jalur</label><select name="jenis_jalur"><option value="Tunggal">Tunggal</option><option value="Ganda">Ganda</option></select></div>
+    <div class="form-group">
+      <label>Kemiringan Jalan</label>
+      <div class="form-row-2">
+        <div><label>Kanan</label><input type="text" name="kemiringan_kanan"></div>
+        <div><label>Kiri</label><input type="text" name="kemiringan_kiri"></div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Permukaan Datar</label>
+      <div class="form-row-2">
+        <div><label>Kanan</label><input type="text" name="permukaan_kanan"></div>
+        <div><label>Kiri</label><input type="text" name="permukaan_kiri"></div>
+      </div>
+    </div>
+    <div class="form-group"><label>Jenis Rel</label><input type="text" name="jenis_rel"></div>
+    <div class="form-group"><label>Jenis Bantalan</label><input type="text" name="jenis_bantalan"></div>
+    <div class="form-group"><label>Jenis Pintu</label><input type="text" name="jenis_pintu"></div>
+
+    <div class="section-title">SUDUT PANDANG</div>
+    <div class="form-group">
+      <label>Pengendara (minimal 150 meter)</label>
+      <div class="form-row-2">
+        <div>
+          <label>Kanan (OK/NOK)</label>
+          <select name="pengendara_kanan">
+            <option value="OK">OK</option>
+            <option value="NOK">NOK</option>
+          </select>
+        </div>
+        <div>
+          <label>Kiri (OK/NOK)</label>
+          <select name="pengendara_kiri">
+            <option value="OK">OK</option>
+            <option value="NOK">NOK</option>
+          </select>
+        </div>
+      </div>
+      <label>Keterangan</label>
+      <input type="text" name="pengendara_ket">
+    </div>
+    <div class="form-group">
+      <label>Masinis (minimal 500 meter)</label>
+      <div class="form-row-2">
+        <div>
+          <label>KM Besar (OK/NOK)</label>
+          <select name="masinis_km_besar">
+            <option value="OK">OK</option>
+            <option value="NOK">NOK</option>
+          </select>
+        </div>
+        <div>
+          <label>KM Kecil (OK/NOK)</label>
+          <select name="masinis_km_kecil">
+            <option value="OK">OK</option>
+            <option value="NOK">NOK</option>
+          </select>
+        </div>
+      </div>
+      <label>Keterangan</label>
+      <input type="text" name="masinis_ket">
+    </div>
+
+    <div class="section-title">INVENTARIS</div>
+    <div class="form-group"><label>Early Warning System (EWS)</label><select name="ews"><option value="Ada">Ada</option><option value="Tidak">Tidak</option></select></div>
+    <div class="form-group"><label>Marka Pita Pengaduh</label><select name="marka"><option value="Ada">Ada</option><option value="Tidak">Tidak</option></select></div>
+    <div class="form-group"><label>Lampu Penerangan Jalan</label><select name="lampu"><option value="Ada">Ada</option><option value="Tidak">Tidak</option></select></div>
+    <div class="form-group">
+      <label>Rambu</label>
+      <select name="rambu_status">
+        <option value="Ada">Ada</option>
+        <option value="Tidak Ada">Tidak Ada</option>
+      </select>
+      <img src="https://www.pngwing.com/pngs/113/199/png-transparent-warning-railroad-crossing-sign-traffic-sign-road-transport-thumbnail.png" alt="Rambu Perlintasan" class="rambu-img">
+    </div>
+
+    <div class="section-title">Temuan dan Rekomendasi</div>
+    <div class="form-group"><label>Temuan/Kendala</label><textarea name="temuan"></textarea></div>
+    <div class="form-group"><label>Rekomendasi</label><textarea name="rekomendasi"></textarea></div>
+
+    <button type="submit">Kirim</button>
+  </form>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw3gp8pXdDSbqFEIuO9t4u3MRwVyCUm6gvzu0l8kHejbRIwluhGxhIr25SUvmBfaSYQ/exec';
+    const form = document.getElementById('formPelintasan');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert('Data berhasil dikirim ke spreadsheet!'))
+        .catch(error => alert('Terjadi kesalahan.'));
+    });
+  </script>
+</body>
+</html>
